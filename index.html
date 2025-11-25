@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About:Blank Launcher with Fallback</title>
+  <title>About:Blank Launcher with Redirect</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -55,13 +55,8 @@
     `);
     win.document.close();
 
-    // Try to close the original tab
-    try {
-      window.close();
-    } catch(e) {
-      // If closing fails, redirect to Google Drive
-      window.location.href = "https://drive.google.com";
-    }
+    // Always redirect the original tab to Google Drive
+    window.location.href = "https://drive.google.com";
   })();
 </script>
 </body>
