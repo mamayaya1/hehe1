@@ -33,9 +33,11 @@
 
   <script>
     document.getElementById("launch").addEventListener("click", function() {
-      var url = "https://mamayaya1.github.io/hehe2/#"; // your bookmark target
-      var win = window.open("about:blank", "_blank");
+      var url = "https://mamayaya1.github.io/hehe2/#"; // target site
+      var win = window.open("about:blank", "_blank");  // open new blank tab
       if (!win) return;
+
+      // Inject launcher UI into the new blank tab
       win.document.open();
       win.document.write(`
         <!DOCTYPE html>
