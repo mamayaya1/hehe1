@@ -4,28 +4,6 @@
   <meta charset="UTF-8">
   <title>About:Blank Launcher</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      font-family: sans-serif;
-      background: #2f3242;
-      color: #fff;
-      text-align: center;
-    }
-    button {
-      padding: 10px 20px;
-      background: #68c950;
-      color: #fff;
-      font-weight: bold;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #5a5c6c;
-    }
-  </style>
 </head>
 <body>
 <script>
@@ -34,7 +12,7 @@
     var win = window.open("about:blank", "_blank");  // open new blank tab
     if (!win) return;
 
-    // Write the launcher UI into the blank tab
+    // Inject launcher UI into the new blank tab
     win.document.open();
     win.document.write(`
       <!DOCTYPE html>
@@ -76,6 +54,9 @@
       </html>
     `);
     win.document.close();
+
+    // Close the original page
+    window.close();
   })();
 </script>
 </body>
